@@ -16,16 +16,17 @@
  /* вторичн цвет текста #757575 */
  /* цвет фона вторичн #F5F4FA */
 
+
  :root {
      --primary-text-color: #757575;
      --title-text-color: #212121;
      --accent-color: #2196F3;
      --primary-bg-color: #F5F4FA;
+
  }
 
  /* animations */
 
-    --anim: 250ms ease-in-out;
 
  /* Загальні css дані для обох html */
 
@@ -46,8 +47,6 @@
     width: 1200px;
     padding-left: 15px;
     padding-right: 15px;
-
- /* border: 2px solid tomato; */
 }
  
 /* Утіліти */
@@ -72,7 +71,6 @@ ul {
 }
 
 
-
 /* Header */
 
 .page-header {
@@ -87,14 +85,20 @@ ul {
     margin-left: 93px;
 }
 
-.site-nav .point:hover,
-.site-nav :focus {
+.site-pages {
+    display: flex;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.site-pages:hover,
+.site-pages:focus {
     color: var(--accent-color);
 }
 
-.site-nav .point + .point {
+.site-nav .site-pages + .site-pages {
     margin-left: 50px;
 }
+
 
 
 .site-nav .link {
@@ -166,9 +170,9 @@ ul {
     text-decoration: none;
 }
 
-
 .navigation-link {
     position: relative;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navigation-link:hover,
@@ -203,14 +207,12 @@ ul {
     display: flex;
     margin-left: auto;
     gap: 30px;
-    }
+}
 
 .point {
     display: flex;
     color: #AFB1B8;
-    transition: color var(--anim);
-    transition: fill var(--anim);
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .point:hover,
@@ -247,7 +249,6 @@ ul {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
-    transition: opacity var(--anim) visibility var(--anim);
 }
 
 .backdrop.is-hidden {
@@ -354,13 +355,12 @@ ul {
     border: 1px solid transparent;
     padding: 10px 24px;
     min-width: 200px;
-    transition: color var(--anim);
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-studio:hover,
 .button-studio:focus {
-    color: #2196F3;
+    color: rgba(33, 150, 243, 1);
 }
 
 /* Section и Work */
@@ -400,7 +400,6 @@ padding-bottom: 94px;
     margin: -1px;
     border: 0;
     padding: 0;
-
     white-space: nowrap;
     clip-path: inset(100%);
     clip: rect(0 0 0 0);
@@ -424,11 +423,13 @@ padding-bottom: 94px;
 .work-text {
     position: absolute;
     display: flex;
-    bottom: 27px;
-    left: 107px;
-    transform: translate(-10%, -10%);
+    bottom: 23px;
+    left: 50%;
+    transform: translate(-50%, 0);
     color: #FFF;
-    /font-size: 14px;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
     font-weight: 700;
     line-height: 1,14;
     letter-spacing: 0.42px; 
@@ -439,7 +440,7 @@ padding-bottom: 94px;
     position: relative;
 }
 
-/* overlay */
+/* overlay for work item*/
 
 .item::before {
     content: "";
@@ -511,8 +512,8 @@ padding-bottom: 94px;
     font-weight: 700;
     line-height: 1.17;
     letter-spacing: 1.08px;
-
 }
+
 
 .team-list {
     display: flex;
@@ -541,7 +542,10 @@ padding-bottom: 94px;
     text-align: center;
 }
 
+
 .team-list p {
+    color: var(--primary-text-color);
+    font-family: Roboto;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.19;
@@ -577,9 +581,8 @@ padding-bottom: 94px;
     color: #afb1b8;
     background-color: #FFFFFF;
     border-radius: 50%;
-    transition: color 250ms;
-    transition: background-color 250ms;
-    cubic-bezier(0.4, 0, 0.2, 1)
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .socials-icon {
@@ -621,12 +624,8 @@ padding-bottom: 94px;
 
  
 .clients-item {
- 
-}
-
-/* .clients-item {
     flex-basis: calc((100% - 150px) / 6);
-} */ 
+} 
 
 
 
@@ -639,8 +638,7 @@ border: 1px solid currentColor;
 width: 170px;
 height: 92px;
 color: #AFB1B8;
-transition: color var(--anim);
-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-link:hover,
@@ -651,9 +649,6 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 .client-logo {
     fill: currentColor;
 }
-
-
-
 
 
 /* Footer */
@@ -680,8 +675,6 @@ address {
 
 .footer-contacts {
     margin-top: 12px;
-    transition: color var(--anim);
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-contacts a {
@@ -692,6 +685,7 @@ address {
     font-weight: 400;
     letter-spacing: 0.42px;
     text-decoration: none;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-contacts :hover,
@@ -739,8 +733,7 @@ address {
     height: 44px;
     border-radius: 50px;
     background-color: #FFFFFF1A;
-    transition: background-color var(--anim);
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .ellipse:hover,
@@ -772,10 +765,9 @@ margin-bottom: 0;
     border: 1px solid transparent;
     padding: 6px 22px;
     text-align: center;
-    transition: color var(--anim);
-    transition: background-color var(--anim);
-    transition: box-shadow var(--anim);
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-list button:hover,
@@ -808,8 +800,19 @@ margin-bottom: 0;
 
 .card-link {
     display: block;
-    transition: box-shadow var(--anim);
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-link:hover,
+.card-link:focus {
+    box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.16),
+        0px 4px 4px 0px rgba(0, 0, 0, 0.06),
+        0px 1px 1px 0px rgba(0, 0, 0, 0.12);
+}
+
+.card-overlay {
+    position: relative;
+    overflow: hidden;
 }
 
 .card-text {
@@ -826,45 +829,42 @@ margin-bottom: 0;
     line-height: 1.56;
     letter-spacing: 0.54px;
     opacity: 0;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(100%);
 }
 
-.card-overlay {
-    position: relative;
-}
-
-
-/* Overlay for Portfolio */
 
 .card-overlay::before {
     content: "";
     position: absolute;
     display: block;
     bottom: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(33, 150, 243, 0.90);
     flex-shrink: 0;
     opacity: 0;
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.card-link:hover .card-overlay::before {
+
+.card-link:hover .card-text,
+.card-link:focus .card-text {
     opacity: 1;
+    transform: translateY(0);
+    background-color: rgba(33, 150, 243, 0.90);
 }
 
 
 .project-list .card-link:hover .card-text,
 .project-list .card-link:focus .card-text {
-opacity: 1;
+    opacity: 1;
 } 
 
 
-.card-link:hover,
-.card-link:focus {
-    box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.16),
-        0px 4px 4px 0px rgba(0, 0, 0, 0.06),
-        0px 1px 1px 0px rgba(0, 0, 0, 0.12);
 
-}
 
 
 .project-title {
@@ -877,7 +877,8 @@ opacity: 1;
     text-decoration: none;
 }
 
-.project-list p {
+.description-text {
+    color: var(--primary-text-color) ;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.88;
