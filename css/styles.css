@@ -22,8 +22,8 @@
      --title-text-color: #212121;
      --accent-color: #2196F3;
      --primary-bg-color: #F5F4FA;
-
- }
+     --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
 
  /* animations */
 
@@ -87,7 +87,7 @@ ul {
 
 .site-pages {
     display: flex;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 250ms var(--timing-function);
 }
 
 .site-pages:hover,
@@ -172,7 +172,7 @@ ul {
 
 .navigation-link {
     position: relative;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 250ms var(--timing-function);
 }
 
 .navigation-link:hover,
@@ -212,7 +212,7 @@ ul {
 .point {
     display: flex;
     color: #AFB1B8;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 250ms var(--timing-function);
 }
 
 .point:hover,
@@ -355,7 +355,7 @@ ul {
     border: 1px solid transparent;
     padding: 10px 24px;
     min-width: 200px;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 250ms var(--timing-function);
 }
 
 .button-studio:hover,
@@ -581,8 +581,8 @@ padding-bottom: 94px;
     color: #afb1b8;
     background-color: #FFFFFF;
     border-radius: 50%;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms var(--timing-function), 
+    color 250ms var(--timing-function);
 }
 
 .socials-icon {
@@ -638,7 +638,7 @@ border: 1px solid currentColor;
 width: 170px;
 height: 92px;
 color: #AFB1B8;
-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+transition: color 250ms var(--timing-function);
 }
 
 .clients-link:hover,
@@ -685,7 +685,7 @@ address {
     font-weight: 400;
     letter-spacing: 0.42px;
     text-decoration: none;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 250ms var(--timing-function);
 }
 
 .footer-contacts :hover,
@@ -733,7 +733,7 @@ address {
     height: 44px;
     border-radius: 50px;
     background-color: #FFFFFF1A;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms var(--timing-function);
 }
 
 .ellipse:hover,
@@ -765,9 +765,9 @@ margin-bottom: 0;
     border: 1px solid transparent;
     padding: 6px 22px;
     text-align: center;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms var(--timing-function),
+    color 250ms var(--timing-function),
+    box-shadow 250ms var(--timing-function);
 }
 
 .button-list button:hover,
@@ -800,7 +800,7 @@ margin-bottom: 0;
 
 .card-link {
     display: block;
-    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: box-shadow 250ms var(--timing-function);
 }
 
 .card-link:hover,
@@ -820,7 +820,7 @@ margin-bottom: 0;
     position: absolute;
     width: 100%;
     height: 100%;
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 250ms var(--timing-function);
     transform: translateY(100%);
     opacity: 0;
 }
