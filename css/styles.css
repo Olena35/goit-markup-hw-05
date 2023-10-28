@@ -211,9 +211,12 @@ ul {
 
 .point {
     display: flex;
+    justify-content: center;
+    align-items: center;
     color: #AFB1B8;
     transition: color 250ms var(--timing-function);
 }
+
 
 .point:hover,
 .point:focus {
@@ -223,7 +226,7 @@ ul {
 
 .point-envelope {
     margin-right: 10px;
-    fill: currentColor;
+    fill: currentColor;;
 }
 
 .point-smartphone {
@@ -249,6 +252,7 @@ ul {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
+    transition: transform 250ms var(--timing-function), opacity 250ms var(--timing-function);
 }
 
 .backdrop.is-hidden {
@@ -267,7 +271,7 @@ ul {
     height: 581px;
     background-color: #FFFFFF;
     border-radius: 4px;
-    transition: transform 300ms ease-in-out 200ms, opacity 300ms ease-in-out 200ms;
+    transition: transform 250ms var(--timing-function), opacity 250ms var(--timing-function);
 }
 
 /* Початковий стан елемента до анімації */
@@ -343,7 +347,7 @@ ul {
 /* Button */
 
 .button-studio {
-    color: #FFFFFF;
+    color:#FFFFFF;
     background-color: var(--accent-color);
     font-family: inherit;
     font-size: 16px;
@@ -360,7 +364,7 @@ ul {
 
 .button-studio:hover,
 .button-studio:focus {
-    color: rgba(33, 150, 243, 1);
+    color: #2F303A;
 }
 
 /* Section и Work */
